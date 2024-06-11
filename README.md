@@ -16,7 +16,7 @@ This repository enables you to run Telegram bots (apps & games) on your Telegram
    - Open the bot on Telegram (web or desktop) and launch the game to see the QR code image, then stop.
 
 4. **Access Developer Tools**:
-   - Open the developer tools by right-clicking anywhere on the page and selecting "Inspect" or by pressing `Ctrl+Shift+I`.
+   - Open the developer tools by right-clicking anywhere on the page and selecting "Inspect" or by pressing `Ctrl+Shift+I` Or `F12`.
 
 5. **Navigate to JavaScript Files**:
    - In the developer tools, go to the "Sources" tab.
