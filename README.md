@@ -46,3 +46,32 @@ This repository enables you to run Telegram bots (apps & games) on your Telegram
 
 13. **Don't Forget to Star**:
     - If you find this repository useful, please consider starring it <3
+
+## Specific items for robots
+
+### Hamster Auto Clicker with javascript
+
+Open Devtools (Inspect) by pressing `Ctrl+Shift+I` Or `F12` & Go to "Console" tab, then copy & paste this code, at the end press "Enter":
+
+```
+setInterval(() => {
+  let tab = document.querySelector('.router-link-exact-active');
+  if (tab && tab.getAttribute('href') === '/clicker') {
+    var dialog = document.querySelector('.bottom-sheet-button');
+    if (dialog) {
+      var e = document.createEvent('HTMLEvents');
+      e.initEvent('click', false, true);
+      dialog.dispatchEvent(e);
+    }
+    var btn = document.querySelector('.user-tap-button:not(.is-morse-mode)');
+    if (btn) {
+      var e = document.createEvent('HTMLEvents');
+      e.initEvent('pointerup', false, true);
+      btn.dispatchEvent(e);
+    }
+  }
+}, 500);
+setInterval(() => {
+  location.reload();
+}, 600000);
+```
