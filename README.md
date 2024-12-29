@@ -8,7 +8,7 @@ This repository enables you to run Telegram bots (apps & games) on your Telegram
 
 1. **Download the Script**:  
    - Download or copy the contents of the script from [this link](https://raw.githubusercontent.com/amirsadeghi1/telegram-appbots-desktop/master/telegram-web-app.js).
-   - 
+     
 2. **Open Telegram Desktop/Web**:
    - Launch the Telegram desktop application or open Telegram Web in your browser.
 
