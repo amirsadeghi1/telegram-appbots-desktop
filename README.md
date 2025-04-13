@@ -1,77 +1,94 @@
-# Telegram AppBots (Games) Run On Desktop (ByPass)
+# 🚀 Run Telegram AppBots (Games) on Desktop – *Bypass Method*
 
-This repository enables you to run Telegram bots (apps & games) on your Telegram desktop application.
+> 💡 Unlock **Telegram Games & Apps** on Telegram Desktop using a smart browser-side script injection hack.  
+> 🧠 No extension, no modding – just pure DevTools magic.
 
-## Installation
+![badge](https://img.shields.io/badge/Status-Stable-green)  
+![badge](https://img.shields.io/github/stars/amirsadeghi1/telegram-appbots-desktop?style=social)  
 
-### Step-by-Step Guide:
+---
 
-1. **Download the Script**:  
-   - Download or copy the contents of the script from [this link](https://raw.githubusercontent.com/amirsadeghi1/telegram-appbots-desktop/master/telegram-web-app.js).
-     
-2. **Open Telegram Desktop/Web**:
-   - Launch the Telegram desktop application or open Telegram Web in your browser.
+## ⚙️ What This Does
 
-3. **Open Telegram Bot and Launch Game**:
-   - Open the bot on Telegram (web or desktop) and launch the game to see the QR code image, then stop.
+This tool lets you bypass mobile-only restrictions on Telegram web apps (bots/games) and run them smoothly inside **Telegram Desktop/Web**.
 
-4. **Access Developer Tools**:
-   - Open the developer tools by right-clicking anywhere on the page and selecting "Inspect" or by pressing `Ctrl+Shift+I` Or `F12`.
+---
 
-5. **Navigate to JavaScript Files**:
-   - In the developer tools, go to the "Sources" tab.
+## 🛠️ Installation
 
-6. **Locate Script File**:
-   - In the left panel, find and open the "js" directory.
+### 🔟 Step-by-Step Guide
 
-7. **Replace Existing Code**:
-   - Open the file named "telegram-web-app.js".
-   - Select all existing JavaScript code (`Ctrl+A`) and delete it.
+1. **Download the Script**  
+   Grab the script from [this link](https://raw.githubusercontent.com/amirsadeghi1/telegram-appbots-desktop/master/telegram-web-app.js)  
+   Or just `Ctrl+A` + `Ctrl+C` the raw code.
 
-8. **Paste New Code**:
-   - Copy the JavaScript code from the downloaded script in this repository.
-   - Paste the copied code into the empty text box.
+2. **Launch Telegram Desktop or Telegram Web**  
+   Open your bot/game in Telegram Desktop **or** in your browser via [Telegram Web](https://web.telegram.org/).
 
-9. **Override Content**:
-   - Right-click on the text box and select "Override content".
+3. **Start the Game**  
+   Click “Play” on the bot. Once the QR code shows up, **pause here** – do *not* scan or continue.
 
-10. **Select Folder**:
-    - A label will appear on top. Click on "select folder" and choose a folder (e.g., "desktop").
+4. **Open DevTools**  
+   Press `Ctrl+Shift+I` or `F12` to open **Developer Tools**.
 
-11. **Confirm Action**:
-    - Another label will appear. Click on "Allow".
+5. **Navigate to Sources**  
+   In DevTools, go to the `Sources` tab.
 
-12. **Refresh and Enjoy**:
-    - Refresh your Telegram bot and witness it running on your desktop.
+6. **Find `telegram-web-app.js`**  
+   Look in the left pane → expand the `js` folder → open `telegram-web-app.js`.
 
-13. **Don't Forget to Star**:
-    - If you find this repository useful, please consider starring it <3
+7. **Replace the Existing Code**  
+   Inside `telegram-web-app.js`:  
+   - Select all (`Ctrl+A`)  
+   - Delete  
+   - Paste your new script
 
-## Specific items for robots
+8. **Override Content (Very Important)**  
+   - Right-click inside the code editor → choose **“Override content”**  
+   - Click **“Select folder”** on the top bar  
+   - Choose any local folder (you can create one called `telegram-injector`)
 
-### Hamster Auto Clicker with javascript
+9. **Grant Access**  
+   Click **“Allow”** when prompted.
 
-Open Devtools (Inspect) by pressing `Ctrl+Shift+I` Or `F12` & Go to "Console" tab, then copy & paste this code, at the end press "Enter":
+10. **Refresh the Page**  
+    Hit `Ctrl+R` or the refresh button.  
+    🕹️ Your bot/app should now **run flawlessly** on desktop.
 
-```
+11. **Star the Repo 💖**  
+    If this saved you hours of reverse engineering, leave a ⭐ [right here](https://github.com/amirsadeghi1/telegram-appbots-desktop)!
+
+---
+
+## 🤖 Bot-Specific Hacks
+
+### 🐹 Hamster Kombat – Auto Clicker in JS
+
+Use this simple **JavaScript auto-clicker** for Hamster-style games:
+
+1. Open DevTools → go to the **Console** tab.
+2. Paste the following code block and press **Enter**:
+
+```js
 setInterval(() => {
   let tab = document.querySelector('.router-link-exact-active');
   if (tab && tab.getAttribute('href') === '/clicker') {
-    var dialog = document.querySelector('.bottom-sheet-button');
+    let dialog = document.querySelector('.bottom-sheet-button');
     if (dialog) {
-      var e = document.createEvent('HTMLEvents');
+      let e = document.createEvent('HTMLEvents');
       e.initEvent('click', false, true);
       dialog.dispatchEvent(e);
     }
-    var btn = document.querySelector('.user-tap-button:not(.is-morse-mode)');
+    let btn = document.querySelector('.user-tap-button:not(.is-morse-mode)');
     if (btn) {
-      var e = document.createEvent('HTMLEvents');
+      let e = document.createEvent('HTMLEvents');
       e.initEvent('pointerup', false, true);
       btn.dispatchEvent(e);
     }
   }
 }, 500);
+
+// Optional: Reload every 10 mins to avoid crashes
 setInterval(() => {
   location.reload();
 }, 600000);
-```
