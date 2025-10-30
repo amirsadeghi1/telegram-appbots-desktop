@@ -8,55 +8,57 @@
 
 ---
 
-## ⚙️ What This Does
+## 🛠️ Quick — Step-by-Step
 
-This tool lets you bypass mobile-only restrictions on Telegram web apps (bots/games) and run them smoothly inside **Telegram Desktop/Web**.
+> ⏱ Estimated time: 2–5 minutes
 
----
+1. **Get the script**  
+   Download or open the raw file:  
+   [`telegram-web-app.js`](https://raw.githubusercontent.com/amirsadeghi1/telegram-appbots-desktop/master/telegram-web-app.js)  
+   Or simply copy its contents (`Ctrl+A`, `Ctrl+C`).
 
-## 🛠️ Installation
+2. **Open Telegram Desktop or Telegram Web**  
+   Navigate to the bot/game you want to launch.
 
-### 🔟 Step-by-Step Guide
+3. **Start the bot and stop at the QR**  
+   Click **Play**. When the QR or login prompt appears, **don’t** scan it yet — leave it visible.
 
-1. **Download the Script**  
-   Grab the script from [this link](https://raw.githubusercontent.com/amirsadeghi1/telegram-appbots-desktop/master/telegram-web-app.js)  
-   Or just `Ctrl+A` + `Ctrl+C` the raw code.
+4. **Open Developer Tools**  
+   Press `Ctrl+Shift+I` or `F12` to open DevTools.
 
-2. **Launch Telegram Desktop or Telegram Web**  
-   Open your bot/game in Telegram Desktop **or** in your browser via [Telegram Web](https://web.telegram.org/).
+5. **Go to the “Sources” tab**
 
-3. **Start the Game**  
-   Click “Play” on the bot. Once the QR code shows up, **pause here** – do *not* scan or continue.
+6. **Locate `telegram-web-app.js`**  
+   In the left sidebar, expand the `js` (or equivalent) folder → open `telegram-web-app.js`.
 
-4. **Open DevTools**  
-   Press `Ctrl+Shift+I` or `F12` to open **Developer Tools**.
-
-5. **Navigate to Sources**  
-   In DevTools, go to the `Sources` tab.
-
-6. **Find `telegram-web-app.js`**  
-   Look in the left pane → expand the `js` folder → open `telegram-web-app.js`.
-
-7. **Replace the Existing Code**  
-   Inside `telegram-web-app.js`:  
+7. **Replace the file’s content**  
    - Select all (`Ctrl+A`)  
    - Delete  
-   - Paste your new script
+   - Paste your copied script
 
-8. **Override Content (Very Important)**  
-   - Right-click inside the code editor → choose **“Override content”**  
-   - Click **“Select folder”** on the top bar  
-   - Choose any local folder (you can create one called `telegram-injector`)
+8. **Enable Overrides (critical)**  
+   - Right-click in the editor → **Override content**  
+   - Click **Select folder** → choose or create one (e.g., `telegram-injector`)
 
-9. **Grant Access**  
-   Click **“Allow”** when prompted.
+9. **Grant permission**  
+   When prompted, click **Allow**.
 
-10. **Refresh the Page**  
-    Hit `Ctrl+R` or the refresh button.  
-    🕹️ Your bot/app should now **run flawlessly** on desktop.
+10. **Refresh the page**  
+    Press `Ctrl+R`.  
+    🕹️ The bot/game should now **run smoothly** on desktop.
 
-11. **Star the Repo 💖**  
-    If this saved you hours of reverse engineering, leave a ⭐ [right here](https://github.com/amirsadeghi1/telegram-appbots-desktop)!
+11. **Star the repo 💖**  
+    If this saved you some reverse-engineering time, star it here → [GitHub Repo](https://github.com/amirsadeghi1/telegram-appbots-desktop)
 
 ---
 
+## ❗ Notes & Troubleshooting
+- Works best with Chromium-based browsers and Telegram Desktop (Electron).  
+- If the file resets after reloading, make sure **Overrides** are enabled and the folder is writable.  
+- If it still fails, clear cache or restart DevTools after replacing the file.
+
+---
+
+## 🔒 Disclaimer
+This technique temporarily modifies client-side files at runtime.  
+Use responsibly — only on accounts or bots you own or have permission to test.
